@@ -1,0 +1,697 @@
+/* ============================================================
+   Expo Management — Premium UI
+   Glassmorphism + gradient accents + micro-interactions
+   ============================================================ */
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes expo-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes expo-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes expo-toast-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(151, 191, 217, 0.4); }
+  50%      { box-shadow: 0 0 0 6px rgba(151, 191, 217, 0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================================
+   ROOT LAYOUT
+   ============================================================ */
+.expo {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: expo-fade 0.35s var(--org-ease);
+}
+
+/* ============================================================
+   PAGE HEADER — Button alignment fixed
+   ============================================================ */
+.expo .org-page-header {
+  display: flex;
+  align-items: center;               /* 👈 center alignment for buttons */
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 4px;
+}
+
+.expo .org-page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   BUTTONS — white text + premium look
+   ============================================================ */
+.expo .org-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--org-fast) var(--org-ease);
+}
+
+/* Primary — white text ✅ */
+.expo .org-btn--primary {
+  background: linear-gradient(135deg, var(--org-accent) 0%, var(--org-accent-strong) 100%);
+  color: #FFFFFF;                    /* 👈 white */
+  border: 1px solid transparent;
+  font-weight: 600;
+  box-shadow:
+    0 4px 14px rgba(151, 191, 217, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.expo .org-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--org-accent-hover) 0%, var(--org-accent) 100%);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(151, 191, 217, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary — white text ✅ */
+.expo .org-btn--secondary {
+  background: var(--org-card);
+  color: #FFFFFF;
+  border: 1px solid var(--org-border);
+}
+.expo .org-btn--secondary:hover:not(:disabled) {
+  background: var(--org-card-elevated);
+  color: #FFFFFF;
+  border-color: rgba(151, 191, 217, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Ghost — accent text, white on hover */
+.expo .org-btn--ghost {
+  background: transparent;
+  color: var(--org-accent);
+  border: 1px solid transparent;
+}
+.expo .org-btn--ghost:hover:not(:disabled) {
+  background: var(--org-accent-soft);
+  color: #FFFFFF;
+  border-color: rgba(151, 191, 217, 0.3);
+}
+
+/* Danger — white text ✅ */
+.expo .org-btn--danger {
+  background: var(--org-danger-soft);
+  color: #FFFFFF;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  font-weight: 500;
+}
+.expo .org-btn--danger:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.28);
+  color: #FFFFFF;
+  border-color: var(--org-danger);
+  transform: translateY(-1px);
+}
+
+.expo .org-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.expo .org-btn:focus-visible {
+  outline: 2px solid var(--org-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   FILTERS BAR — Glass + Icons (emoji hints)
+   ============================================================ */
+.expo-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 16px 18px;
+  align-items: center;
+  border-radius: var(--org-radius-lg);
+  background: linear-gradient(160deg,
+    rgba(21, 29, 43, 0.7) 0%,
+    rgba(17, 24, 39, 0.75) 100%);
+  border: 1px solid var(--org-border);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle top accent line */
+.expo-filters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(151, 191, 217, 0.6),
+    transparent);
+}
+
+@media (max-width: 1024px) { .expo-filters { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px)  { .expo-filters { grid-template-columns: 1fr; } }
+
+.expo-filters .org-input,
+.expo-filters .org-select {
+  height: 40px;
+  font-size: 13px;
+  background: var(--org-bg-secondary);
+  border-radius: 10px;
+  transition: all var(--org-fast) var(--org-ease);
+}
+
+.expo-filters .org-input:focus,
+.expo-filters .org-select:focus {
+  border-color: var(--org-accent);
+  box-shadow: 0 0 0 3px var(--org-accent-soft);
+  background: var(--org-card);
+}
+
+/* Search icon via background (optional) */
+.expo-filters .org-input[type="search"] {
+  padding-left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 14px center;
+}
+
+/* ============================================================
+   TABLE — Premium rows with hover glow
+   ============================================================ */
+.expo-table-wrap {
+  padding: 0;
+  overflow-x: auto;
+  border-radius: var(--org-radius-lg);
+  border: 1px solid var(--org-border);
+  background: linear-gradient(160deg,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(13, 17, 27, 0.9) 100%);
+  animation: fadeSlideUp 0.4s var(--org-ease) 0.1s backwards;
+}
+
+.expo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.expo-table thead {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.expo-table thead th {
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--org-text-secondary);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--org-border);
+  white-space: nowrap;
+}
+
+.expo-table thead th.is-sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--org-fast);
+}
+.expo-table thead th.is-sortable:hover { color: var(--org-accent); }
+
+.expo-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--org-divider);
+  color: var(--org-text);
+  vertical-align: middle;
+}
+
+.expo-table tbody tr {
+  transition: background var(--org-fast) var(--org-ease);
+  position: relative;
+}
+
+.expo-table tbody tr:last-child td { border-bottom: none; }
+
+.expo-table tbody tr:hover {
+  background: rgba(151, 191, 217, 0.04);
+}
+
+.expo-table tbody tr:hover td:first-child {
+  box-shadow: inset 3px 0 0 var(--org-accent);
+}
+
+/* ============================================================
+   COVER THUMB
+   ============================================================ */
+.expo-cover {
+  width: 60px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--org-bg-secondary);
+  border: 1px solid var(--org-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform var(--org-fast) var(--org-ease);
+}
+
+.expo-cover::before {
+  content: "🖼";
+  position: absolute;
+  font-size: 16px;
+  opacity: 0.25;
+  color: var(--org-text-muted);
+}
+
+.expo-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.expo-table tbody tr:hover .expo-cover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   TITLE CELL
+   ============================================================ */
+.expo-title-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 180px;
+}
+
+.expo-title-cell strong {
+  color: var(--org-text);
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
+}
+
+.expo-title-cell__theme {
+  font-size: 11px;
+  color: var(--org-text-muted);
+  font-style: italic;
+}
+
+/* ============================================================
+   DATES & LOCATION
+   ============================================================ */
+.expo-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: var(--org-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.expo-dates span:last-child {
+  color: var(--org-accent);
+  font-weight: 500;
+}
+
+.expo-loc {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.expo-loc__venue {
+  font-size: 11px;
+  color: var(--org-text-muted);
+}
+
+/* ============================================================
+   ACTION BUTTONS — Aligned in row, white text
+   ============================================================ */
+.expo-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.expo-actions .org-btn {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  min-width: 68px;
+}
+
+/* ============================================================
+   STATUS BADGE (override)
+   ============================================================ */
+.expo-table .org-badge {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.expo .org-empty {
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: var(--org-radius-lg);
+  background: linear-gradient(160deg,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(13, 17, 27, 0.9) 100%);
+  border: 1px dashed var(--org-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.expo .org-empty__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--org-text);
+  margin: 0;
+}
+
+.expo .org-empty__desc {
+  font-size: 13px;
+  color: var(--org-text-secondary);
+  margin: 0 0 8px;
+}
+
+/* ============================================================
+   MODAL — Glassmorphic + smooth
+   ============================================================ */
+.expo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(3, 7, 18, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: expo-fade 200ms ease;
+}
+
+.expo-modal {
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: var(--org-radius-lg);
+  background: linear-gradient(160deg,
+    rgba(21, 29, 43, 0.95) 0%,
+    rgba(17, 24, 39, 0.98) 100%);
+  border: 1px solid var(--org-border);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(151, 191, 217, 0.08);
+  animation: expo-pop 240ms var(--org-ease);
+  position: relative;
+}
+
+.expo-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--org-accent) 50%,
+    transparent);
+  border-radius: var(--org-radius-lg) var(--org-radius-lg) 0 0;
+}
+
+.expo-modal--sm { max-width: 440px; }
+
+.expo-modal__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--org-divider);
+}
+
+.expo-modal__head h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--org-text);
+  letter-spacing: -0.01em;
+}
+
+.expo-modal__close {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--org-border);
+  color: var(--org-text-secondary);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--org-fast) var(--org-ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expo-modal__close:hover {
+  background: var(--org-danger-soft);
+  border-color: rgba(248, 113, 113, 0.4);
+  color: var(--org-danger);
+  transform: rotate(90deg);
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.expo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.expo-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .expo-form__grid { grid-template-columns: 1fr; }
+}
+
+.expo-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.expo-form__field--full { grid-column: 1 / -1; }
+
+.expo-form__field label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--org-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.expo-form__field .org-input,
+.expo-form__field .org-select,
+.expo-form__field .org-textarea {
+  height: 40px;
+  border-radius: 10px;
+  font-size: 13px;
+  transition: all var(--org-fast) var(--org-ease);
+}
+
+.expo-form__field .org-textarea {
+  height: auto;
+  min-height: 90px;
+  padding: 10px 14px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.expo-form__field .org-input:focus,
+.expo-form__field .org-select:focus,
+.expo-form__field .org-textarea:focus {
+  border-color: var(--org-accent);
+  box-shadow: 0 0 0 3px var(--org-accent-soft);
+  background: var(--org-card);
+}
+
+.expo-form__error {
+  font-size: 11px;
+  color: var(--org-danger);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.expo-form__error::before {
+  content: "⚠";
+  font-size: 11px;
+}
+
+.expo-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--org-divider);
+}
+
+/* ============================================================
+   CONFIRM MODAL
+   ============================================================ */
+.expo-confirm__text {
+  font-size: 13.5px;
+  color: var(--org-text-secondary);
+  margin: 0 0 20px;
+  line-height: 1.55;
+}
+
+.expo-confirm__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--org-text);
+  margin: 0 0 8px;
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.expo-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  animation: expo-toast-in 240ms var(--org-ease);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.expo-toast--success {
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+  color: #031A12;                    /* dark text on green for contrast */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.expo-toast--success::before {
+  content: "✓";
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.expo-toast--error {
+  background: linear-gradient(135deg, #F87171 0%, #DC2626 100%);
+  color: #FFFFFF;                    /* 👈 white text */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.expo-toast--error::before {
+  content: "✕";
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+.expo-modal::-webkit-scrollbar {
+  width: 8px;
+}
+.expo-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.expo-modal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.expo-modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .expo .org-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .expo .org-page-header__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .expo-modal { padding: 22px; }
+  .expo-actions { flex-wrap: wrap; }
+  .expo-actions .org-btn { flex: 1; min-width: auto; }
+}

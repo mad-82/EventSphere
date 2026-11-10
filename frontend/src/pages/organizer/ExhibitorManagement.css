@@ -1,0 +1,664 @@
+/* ============================================================
+   Exhibitors Management — Premium Redesign
+   Glassmorphism + animations + premium buttons
+   ============================================================ */
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes exhibitors-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes exhibitors-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(151, 191, 217, 0.4); }
+  50%      { box-shadow: 0 0 0 6px rgba(151, 191, 217, 0); }
+}
+
+/* ============================================================
+   ROOT
+   ============================================================ */
+.exhibitors {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: exhibitors-fade 0.35s var(--org-ease);
+}
+
+/* ============================================================
+   PAGE HEADER — center-aligned buttons
+   ============================================================ */
+.exhibitors .org-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.exhibitors .org-page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   BUTTONS — premium look, white text
+   ============================================================ */
+.exhibitors .org-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--org-fast) var(--org-ease);
+}
+
+/* Primary — white text + gradient glow ✅ */
+.exhibitors .org-btn--primary {
+  background: linear-gradient(135deg, var(--org-accent) 0%, var(--org-accent-strong) 100%);
+  color: #FFFFFF !important;
+  border: 1px solid transparent;
+  font-weight: 600;
+  box-shadow:
+    0 4px 14px rgba(151, 191, 217, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.exhibitors .org-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--org-accent-hover) 0%, var(--org-accent) 100%);
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(151, 191, 217, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary — white text ✅ */
+.exhibitors .org-btn--secondary {
+  background: var(--org-card);
+  color: #FFFFFF !important;
+  border: 1px solid var(--org-border);
+  font-weight: 500;
+}
+.exhibitors .org-btn--secondary:hover:not(:disabled) {
+  background: var(--org-card-elevated);
+  color: #FFFFFF !important;
+  border-color: rgba(151, 191, 217, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Ghost — accent → white on hover */
+.exhibitors .org-btn--ghost {
+  background: transparent;
+  color: var(--org-accent);
+  border: 1px solid transparent;
+}
+.exhibitors .org-btn--ghost:hover:not(:disabled) {
+  background: var(--org-accent-soft);
+  color: #FFFFFF !important;
+  border-color: rgba(151, 191, 217, 0.3);
+}
+
+/* Danger — white text ✅ */
+.exhibitors .org-btn--danger {
+  background: var(--org-danger-soft);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  font-weight: 500;
+}
+.exhibitors .org-btn--danger:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.3);
+  color: #FFFFFF !important;
+  border-color: var(--org-danger);
+  transform: translateY(-1px);
+}
+
+.exhibitors .org-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.exhibitors .org-btn:focus-visible {
+  outline: 2px solid var(--org-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   FILTERS BAR — glass with top accent
+   ============================================================ */
+.exhibitors-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: var(--org-radius-lg);
+  background: linear-gradient(160deg,
+    rgba(21, 29, 43, 0.7) 0%,
+    rgba(17, 24, 39, 0.75) 100%);
+  border: 1px solid var(--org-border);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+.exhibitors-filters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(151, 191, 217, 0.6),
+    transparent);
+}
+
+@media (max-width: 900px) {
+  .exhibitors-filters { grid-template-columns: 1fr; }
+}
+
+.exhibitors-filters .org-input,
+.exhibitors-filters .org-select {
+  height: 40px;
+  font-size: 13px;
+  background: var(--org-bg-secondary);
+  border-radius: 10px;
+  transition: all var(--org-fast) var(--org-ease);
+}
+.exhibitors-filters .org-input:focus,
+.exhibitors-filters .org-select:focus {
+  border-color: var(--org-accent);
+  box-shadow: 0 0 0 3px var(--org-accent-soft);
+  background: var(--org-card);
+}
+
+/* Search icon */
+.exhibitors-filters .org-input[type="search"] {
+  padding-left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 14px center;
+}
+
+/* ============================================================
+   TABLE — premium rows + hover glow
+   ============================================================ */
+.exhibitors-table-wrap {
+  padding: 0;
+  overflow-x: auto;
+  border-radius: var(--org-radius-lg);
+  border: 1px solid var(--org-border);
+  background: linear-gradient(160deg,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(13, 17, 27, 0.9) 100%);
+  animation: fadeSlideUp 0.4s var(--org-ease) 0.1s backwards;
+}
+
+.exhibitors-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.exhibitors-table thead {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.exhibitors-table thead th {
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--org-text-secondary);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--org-border);
+  white-space: nowrap;
+}
+
+.exhibitors-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--org-divider);
+  color: var(--org-text);
+  vertical-align: middle;
+}
+
+.exhibitors-table tbody tr {
+  transition: background var(--org-fast) var(--org-ease);
+}
+
+.exhibitors-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.exhibitors-table tbody tr:hover {
+  background: rgba(151, 191, 217, 0.04);
+}
+
+.exhibitors-table tbody tr:hover td:first-child {
+  box-shadow: inset 3px 0 0 var(--org-accent);
+}
+
+/* ============================================================
+   COMPANY CELL — with avatar initials
+   ============================================================ */
+.exhibitors-company {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.exhibitors-company__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--org-accent) 0%, var(--org-accent-strong) 100%);
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(151, 191, 217, 0.3);
+}
+
+.exhibitors-company__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.exhibitors-company__name {
+  font-weight: 600;
+  color: var(--org-text);
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exhibitors-company__email {
+  font-size: 11px;
+  color: var(--org-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CONTACT CELL
+   ============================================================ */
+.exhibitors-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.exhibitors-contact__name {
+  font-weight: 500;
+  color: var(--org-text);
+  font-size: 13px;
+}
+
+.exhibitors-contact__phone {
+  font-size: 11px;
+  color: var(--org-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   ACTION BUTTONS in row
+   ============================================================ */
+.exhibitors-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.exhibitors-actions .org-btn {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  min-width: 64px;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.exhibitors-empty {
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: var(--org-radius-lg);
+  background: linear-gradient(160deg,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(13, 17, 27, 0.9) 100%);
+  border: 1px dashed var(--org-border);
+  color: var(--org-text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.exhibitors-empty__icon {
+  font-size: 40px;
+  opacity: 0.4;
+}
+
+.exhibitors-empty__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--org-text);
+  margin: 0;
+}
+
+.exhibitors-empty__desc {
+  font-size: 13px;
+  color: var(--org-text-secondary);
+  margin: 0 0 8px;
+}
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+.exhibitors-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 4px 0;
+}
+
+.exhibitors-pagination__info {
+  font-size: 12px;
+  color: var(--org-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.exhibitors-pagination__controls {
+  display: flex;
+  gap: 8px;
+}
+
+/* ============================================================
+   MODAL — glass + gradient top border
+   ============================================================ */
+.exhibitors-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(3, 7, 18, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: exhibitors-fade 200ms ease;
+}
+
+.exhibitors-modal {
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: var(--org-radius-lg);
+  background: linear-gradient(160deg,
+    rgba(21, 29, 43, 0.98) 0%,
+    rgba(17, 24, 39, 0.98) 100%);
+  border: 1px solid var(--org-border);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(151, 191, 217, 0.08);
+  animation: exhibitors-pop 240ms var(--org-ease);
+  position: relative;
+}
+
+.exhibitors-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--org-accent) 50%,
+    transparent);
+  border-radius: var(--org-radius-lg) var(--org-radius-lg) 0 0;
+}
+
+.exhibitors-modal__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--org-divider);
+}
+
+.exhibitors-modal__head h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--org-text);
+  letter-spacing: -0.01em;
+}
+
+.exhibitors-modal__sub {
+  font-size: 12px;
+  color: var(--org-text-secondary);
+  margin: 6px 0 0;
+}
+
+.exhibitors-modal__close {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--org-border);
+  color: var(--org-text-secondary);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--org-fast) var(--org-ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.exhibitors-modal__close:hover {
+  background: var(--org-danger-soft);
+  border-color: rgba(248, 113, 113, 0.4);
+  color: var(--org-danger);
+  transform: rotate(90deg);
+}
+
+.exhibitors-modal__meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.exhibitors-modal__section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--org-divider);
+}
+.exhibitors-modal__section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.exhibitors-modal__section h3 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--org-text-secondary);
+  margin: 0 0 12px;
+}
+
+.exhibitors-kv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exhibitors-kv > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--org-text);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--org-divider);
+}
+.exhibitors-kv > div:last-child {
+  border-bottom: none;
+}
+
+.exhibitors-kv > div > span:first-child {
+  color: var(--org-text-secondary);
+  font-size: 12.5px;
+}
+
+.exhibitors-kv a {
+  color: var(--org-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.exhibitors-kv a:hover {
+  text-decoration: underline;
+}
+
+.exhibitors-modal__desc {
+  font-size: 13px;
+  color: var(--org-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================
+   PRODUCTS — pill chips
+   ============================================================ */
+.exhibitors-products {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exhibitors-products li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--org-accent-soft);
+  border: 1px solid rgba(151, 191, 217, 0.25);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--org-accent);
+  transition: all var(--org-fast) var(--org-ease);
+}
+
+.exhibitors-products li:hover {
+  background: var(--org-accent);
+  color: #FFFFFF;
+  border-color: var(--org-accent);
+}
+
+/* ============================================================
+   MODAL ACTIONS
+   ============================================================ */
+.exhibitors-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid var(--org-divider);
+  margin-top: 20px;
+}
+
+/* ============================================================
+   STATUS BADGES (override)
+   ============================================================ */
+.exhibitors .org-badge {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+.exhibitors-modal::-webkit-scrollbar {
+  width: 8px;
+}
+.exhibitors-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.exhibitors-modal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.exhibitors-modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .exhibitors .org-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .exhibitors .org-page-header__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .exhibitors-modal {
+    padding: 22px;
+  }
+  .exhibitors-actions {
+    flex-wrap: wrap;
+  }
+  .exhibitors-actions .org-btn {
+    flex: 1;
+    min-width: auto;
+  }
+  .exhibitors-company {
+    min-width: 140px;
+  }
+}

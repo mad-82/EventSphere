@@ -1,0 +1,53 @@
+:root {
+  /* ── Pastel palette ─────────────────────────────── */
+  --c-lavender:  #DCC9F0;
+  --c-blush:     #F5D5E0;
+  --c-baby:      #D4E8F5;
+  --c-mint:      #D8EBDD;
+  --c-peach:     #F8DFCE;
+  --c-lilac:     #E9DDF5;
+
+  /* ── Neutrals / surfaces ────────────────────────── */
+  --c-ink:       #17141F;
+  --c-ink-soft:  #3A3448;
+  --c-ink-mute:  #6B6478;
+  --c-ink-faint: #9A93A8;
+  --c-paper:     #FBFAF8;
+  --c-paper-2:   #F4F0EC;
+  --c-paper-3:   #EAE5DF;
+  --c-white:     #FFFFFF;
+  --c-navy:      #14101F;
+  --c-navy-2:    #1D1830;
+
+  /* ── Lines ──────────────────────────────────────── */
+  --line:            rgba(23, 20, 31, 0.12);
+  --line-strong:     rgba(23, 20, 31, 0.22);
+  --line-light:      rgba(255, 255, 255, 0.14);
+  --glass-line:      rgba(255, 255, 255, 0.65);
+  --glass-line-soft: rgba(255, 255, 255, 0.35);
+
+  /* ── Shadows ────────────────────────────────────── */
+  --shadow-xs: 0 1px 3px rgba(35, 25, 65, 0.05);
+  --shadow-sm: 0 4px 14px rgba(35, 25, 65, 0.08);
+  --shadow-md: 0 12px 35px rgba(35, 25, 65, 0.12);
+  --shadow-lg: 0 30px 70px rgba(35, 25, 65, 0.18);
+  --shadow-xl: 0 40px 100px rgba(35, 25, 65, 0.22);
+
+  /* ── Type ───────────────────────────────────────── */
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Helvetica Neue', Arial, sans-serif;
+  --font-display:
+    'Fraunces', 'Iowan Old Style', 'Apple Garamond', Georgia,
+    'Times New Roman', serif;
+
+  /* ── Layout ─────────────────────────────────────── */
+  --container: 1320px;
+  --gutter:    clamp(20px, 4vw, 56px);
+  --section-y: clamp(88px, 11vw, 160px);
+
+  /* ── Motion ─────────────────────────────────────── */
+  --ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out:   cubic-bezier(0.16, 1, 0.30, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+}

@@ -1,0 +1,32 @@
+.schedule-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.schedule-date-title {
+  font-size: 1.2rem;
+  color: #0B1220;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #97BFD9;
+  padding-bottom: 10px;
+}
+
+.schedule-date-count {
+  font-size: 0.85rem;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+.schedule-date-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

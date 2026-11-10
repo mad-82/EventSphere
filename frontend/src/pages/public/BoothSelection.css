@@ -1,0 +1,211 @@
+/* =========================================
+   ANIMATIONS (Scanning Lines)
+   ========================================= */
+@keyframes scan-top {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
+
+@keyframes scan-bottom {
+  0% { right: -40%; }
+  100% { right: 100%; }
+}
+
+/* =========================================
+   BASE PAGE BACKGROUND (Dark)
+   ========================================= */
+.booth-page-wrapper {
+  background: #080B12;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  color: #ffffff;
+}
+
+/* =========================================
+   1. HERO SECTION
+   ========================================= */
+.booth-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  padding: 140px 20px 80px 20px;
+  text-align: center;
+  border-bottom: 4px solid #97bfd9;
+}
+
+.booth-hero__badge {
+  display: inline-block;
+  background: #080B12;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.booth-hero__title {
+  color: #080B12;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+
+.booth-hero__subtitle {
+  color: #1F2937;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* =========================================
+   2. ANIMATED SCANNING CONTAINER
+   ========================================= */
+.animated-section {
+  position: relative;
+  background: #111827;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.animated-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to right, transparent, #97BFD9, #ffffff, #97BFD9, transparent);
+  animation: scan-top 1.5s linear infinite;
+  z-index: 10;
+}
+
+.animated-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -40%;
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to left, transparent, #ffffff, #97BFD9, #ffffff, transparent);
+  animation: scan-bottom 1.5s linear infinite;
+  animation-delay: 0.75s;
+  z-index: 10;
+}
+
+/* =========================================
+   3. STATS CARDS
+   ========================================= */
+.booth-page-wrapper .card {
+  background: #151D2B;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.booth-page-wrapper .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: rgba(151, 191, 217, 0.4);
+}
+.booth-page-wrapper .card h6 {
+  color: #A7B0C0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.booth-page-wrapper .card h2 {
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* =========================================
+   4. FORM CONTROLS
+   ========================================= */
+.form-control, .form-select {
+  background-color: #0D111B;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  height: 45px;
+  border-radius: 8px;
+}
+.form-control::placeholder {
+  color: #6B7280;
+}
+.form-control:focus, .form-select:focus {
+  background-color: #0D111B;
+  color: #ffffff;
+  border-color: #97BFD9;
+  box-shadow: 0 0 0 0.25rem rgba(151, 191, 217, 0.15);
+}
+.form-select option {
+  background: #0D111B;
+  color: #ffffff;
+}
+
+/* =========================================
+   5. BOOTH CARDS (Horizontal / Aligned Layout)
+   ========================================= */
+.booth-card-wrapper {
+  width: 100%;
+  background: #111827; /* Dark Background for whole card */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Image upar, details neeche */
+}
+
+.booth-card-wrapper:hover {
+  transform: translateY(-6px);
+  border-color: #97BFD9;
+  box-shadow: 0 20px 40px rgba(151, 191, 217, 0.15);
+}
+
+/* Agar aapke BoothCard component ke andar image aur text side-by-side hain, 
+   toh neeche wala CSS usko force karega ke gap kam ho */
+.booth-card-wrapper .booth-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Heading (A-01) */
+.booth-card-wrapper h3, 
+.booth-card-wrapper h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Sub-headings (Hall, Size, Capacity) */
+.booth-card-wrapper p, 
+.booth-card-wrapper span {
+  margin: 0;
+  color: #A7B0C0;
+  font-size: 0.9rem;
+}
+
+/* Price Section */
+.booth-card-wrapper .price-tag {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  color: #34D399; /* Green for price */
+  font-weight: 700;
+  font-size: 1.1rem;
+}

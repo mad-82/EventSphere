@@ -1,0 +1,113 @@
+.ex-detail-wrapper {
+  min-height: 100vh;
+  background: #0a0f1a;
+  color: #ffffff;
+}
+
+.ex-profile-card {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ex-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ex-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.ex-logo, .ex-avatar-fallback {
+  width: 90px;
+  height: 90px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #97BFD9, #6FA8CB);
+  color: #0B1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(151, 191, 217, 0.3);
+}
+
+.ex-section h4, .ex-sidebar h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+}
+
+.ex-section p {
+  color: #a0aec0;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.ex-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ex-contact-list li {
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+.ex-contact-list strong {
+  color: #a0aec0;
+  margin-right: 8px;
+}
+.ex-contact-list a {
+  color: #97BFD9;
+  text-decoration: none;
+}
+
+.ex-sidebar {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.ex-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ex-sidebar li {
+  margin-bottom: 16px;
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ex-sidebar strong {
+  color: #a0aec0;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.ex-sidebar a {
+  color: #97BFD9;
+  word-break: break-all;
+}
+
+/* Hover effect for the card in EventDetails */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}

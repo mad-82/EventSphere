@@ -1,0 +1,150 @@
+/* =========================================
+   GLOBAL PAGE BACKGROUND (DARK)
+   ========================================= */
+.events-page {
+  background-color: #080B12; /* DEEP BLACK BASE */
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+/* =========================================
+   HERO SECTION (Gradient Background)
+   ========================================= */
+.events-hero-gradient {
+  position: relative;
+  min-height: 320px;
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.events-hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #0B1220; /* Black Heading */
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.events-hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0B1220;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+/* =========================================
+   FILTER BOX WITH GRADIENT SHADOW & ANIMATION
+   ========================================= */
+.filter-box-wrapper {
+  position: relative;
+  border-radius: 16px;
+  background: #0D111B; /* Inner deep black */
+  
+  /* Heavy Gradient Shadow */
+  box-shadow: 0 20px 50px -10px rgba(151, 191, 217, 0.4), 
+              0 0 30px rgba(151, 191, 217, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  z-index: 1;
+  margin-top: -40px; /* Overlaps the hero section */
+  margin-bottom: 40px;
+}
+
+/* Top Line Animation (Left to Right) */
+.filter-box-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to right, transparent, #97BFD9, #ffffff, #97BFD9, transparent);
+  animation: scan-top 3s linear infinite;
+  z-index: 10;
+}
+
+/* Bottom Line Animation (Right to Left) */
+.filter-box-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -40%;
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to left, transparent, #ffffff, #97BFD9, #ffffff, transparent);
+  animation: scan-bottom 3s linear infinite;
+  animation-delay: 1.5s;
+  z-index: 10;
+}
+
+@keyframes scan-top {
+  0% { left: -40%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes scan-bottom {
+  0% { right: -40%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { right: 100%; opacity: 0; }
+}
+
+.filter-box-inner {
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Form Inputs & Selects */
+.form-control-lg, .form-select-lg {
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #151D2B; /* Dark input background */
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 12px 18px;
+  transition: all 0.3s;
+}
+
+.form-control-lg::placeholder {
+  color: #6B7280;
+}
+
+.form-control-lg:focus, .form-select-lg:focus {
+  border-color: #97BFD9;
+  background-color: #1a2235;
+  box-shadow: 0 0 0 0.25rem rgba(151, 191, 217, 0.15);
+  color: #ffffff;
+}
+
+/* =========================================
+   NO EVENTS STATE
+   ========================================= */
+.no-events-found {
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+.no-events-found h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.no-events-found p {
+  color: #A7B0C0;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .events-hero-gradient { padding-top: 110px; padding-bottom: 60px; min-height: auto; }
+  .events-hero-title { font-size: 2.2rem; }
+  .filter-box-wrapper { margin-top: -20px; }
+}

@@ -1,0 +1,322 @@
+/* =========================================
+   EVENTSTRAT.AI - ABOUT US PAGE (Premium)
+   ========================================= */
+
+.about-page-wrapper {
+  background: #080B12;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.about-content-container {
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================
+   SCROLL ANIMATION CLASSES
+   ========================================= */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   HERO SECTION (Split Layout + CSS Mockup)
+   ========================================= */
+.about-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  padding: 160px 20px 120px 20px;
+  border-bottom: 4px solid #97bfd9;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(80px);
+  z-index: 0;
+}
+.circle-1 { width: 500px; height: 500px; top: -150px; left: -150px; }
+.circle-2 { width: 400px; height: 400px; bottom: -100px; right: -100px; background: rgba(8, 11, 18, 0.2); }
+
+.about-hero__badge {
+  display: inline-block;
+  background: #080B12;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.about-hero__title {
+  color: #080B12;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.about-hero__subtitle {
+  color: #1F2937;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 500;
+  max-width: 95%;
+}
+
+/* CSS Floating Mockup Elements */
+.hero-mockup-container {
+  position: relative;
+  height: 450px;
+  width: 100%;
+}
+
+.main-dashboard-mockup {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  width: 85%;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-dot { width: 10px; height: 10px; border-radius: 50%; }
+.dash-body { display: flex; flex: 1; gap: 20px; }
+.dash-sidebar { width: 30%; border-right: 1px solid rgba(0,0,0,0.1); padding-right: 15px; }
+.dash-line { height: 10px; background: rgba(0,0,0,0.1); border-radius: 4px; }
+.dash-main-content { flex: 1; display: flex; align-items: flex-end; }
+.dash-chart-bars { display: flex; gap: 12px; width: 100%; height: 120px; align-items: flex-end; }
+.dash-bar {
+  flex: 1;
+  background: linear-gradient(to top, #97BFD9, #6FA8CB);
+  border-radius: 6px 6px 0 0;
+  opacity: 0.8;
+}
+
+/* Floating Cards Animation */
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.mockup-card {
+  position: absolute;
+  padding: 16px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 5;
+  min-width: 220px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ffffff;
+}
+
+.floating-anim-1 { top: 10px; right: 0; animation: floatY 4s ease-in-out infinite; }
+.floating-anim-2 { bottom: 80px; left: 0; animation: floatY 5s ease-in-out infinite 1s; }
+.floating-anim-3 { bottom: -20px; right: 30px; animation: floatY 4.5s ease-in-out infinite 0.5s; }
+
+.mockup-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.bg-blue { background: rgba(151, 191, 217, 0.2); color: #4A7C9B; }
+.bg-green { background: rgba(52, 211, 153, 0.2); color: #059669; }
+.bg-purple { background: rgba(167, 139, 250, 0.2); color: #7C3AED; }
+
+/* =========================================
+   ANIMATED SECTIONS (Scanning Lines)
+   ========================================= */
+@keyframes scan-top { 0% { left: -40%; } 100% { left: 100%; } }
+@keyframes scan-bottom { 0% { right: -40%; } 100% { right: 100%; } }
+
+.animated-section {
+  position: relative;
+  background: #111827;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.animated-section:hover {
+  border-color: rgba(151, 191, 217, 0.3);
+  transform: translateY(-5px);
+}
+
+.animated-section::before {
+  content: ""; position: absolute; top: 0; left: -40%; height: 3px; width: 40%;
+  background: linear-gradient(to right, transparent, #97BFD9, #ffffff, #97BFD9, transparent);
+  animation: scan-top 1.5s linear infinite; z-index: 10;
+}
+
+.animated-section::after {
+  content: ""; position: absolute; bottom: 0; right: -40%; height: 3px; width: 40%;
+  background: linear-gradient(to left, transparent, #ffffff, #97BFD9, #ffffff, transparent);
+  animation: scan-bottom 1.5s linear infinite; animation-delay: 0.75s; z-index: 10;
+}
+
+/* =========================================
+   OUR STORY CARD (Naya Section)
+   ========================================= */
+.story-card {
+  background: #111827;
+  padding: 50px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.story-card::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, #080B12, #97BFD9, #080B12);
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+.section-heading {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.section-heading.text-center::after { left: 50%; transform: translateX(-50%); }
+
+.section-heading::after {
+  content: ""; position: absolute; bottom: -8px; left: 0; width: 50px; height: 3px;
+  background: #97BFD9; border-radius: 2px;
+}
+
+.section-text {
+  color: #A7B0C0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.section-text-lead {
+  color: #A7B0C0;
+  font-size: 1.25rem;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+/* =========================================
+   ECOSYSTEM CARDS
+   ========================================= */
+.icon-wrapper {
+  width: 60px; height: 60px; border-radius: 12px;
+  background: rgba(151, 191, 217, 0.1); color: #97BFD9;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.ecosystem-title { color: #ffffff; font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+.ecosystem-list { list-style: none; padding: 0; margin: 0; }
+.ecosystem-list li { display: flex; align-items: flex-start; gap: 10px; color: #A7B0C0; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.5; }
+.ecosystem-list li svg { color: #34D399; flex-shrink: 0; margin-top: 2px; }
+
+/* =========================================
+   HOW IT WORKS (Process)
+   ========================================= */
+.process-step { text-align: center; padding: 20px; }
+.process-number {
+  width: 50px; height: 50px; background: #111827; border: 2px solid #97BFD9; color: #97BFD9;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; font-weight: 700; margin: 0 auto 16px auto; box-shadow: 0 0 20px rgba(151, 191, 217, 0.2);
+}
+.process-step h5 { color: #ffffff; font-weight: 700; margin-bottom: 8px; }
+.process-step p { color: #A7B0C0; font-size: 0.9rem; margin: 0; }
+
+/* =========================================
+   WHY CHOOSE US (Feature Cards)
+   ========================================= */
+.feature-card {
+  background: #111827; border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px; padding: 24px; height: 100%; transition: all 0.3s ease;
+}
+.feature-card:hover { background: #151D2B; border-color: rgba(151, 191, 217, 0.3); transform: translateY(-3px); }
+.feature-icon { color: #97BFD9; margin-bottom: 16px; }
+.feature-card h5 { color: #ffffff; font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+.feature-card p { color: #A7B0C0; font-size: 0.9rem; margin: 0; line-height: 1.5; }
+
+/* =========================================
+   CORE VALUES
+   ========================================= */
+.value-pill {
+  background: rgba(151, 191, 217, 0.1); color: #97BFD9;
+  border: 1px solid rgba(151, 191, 217, 0.2); padding: 12px 28px; border-radius: 999px;
+  font-size: 1rem; font-weight: 600; transition: all 0.3s ease;
+}
+.value-pill:hover { background: #97BFD9; color: #080B12; transform: scale(1.05); }
+
+/* =========================================
+   CTA SECTION & BUTTONS
+   ========================================= */
+.cta-section { padding: 60px 40px; }
+
+.btn-premium-primary {
+  background: linear-gradient(135deg, #97BFD9 0%, #6FA8CB 100%); color: #080B12;
+  font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none;
+  transition: all 0.3s ease; border: none; display: inline-flex; align-items: center; font-size: 1rem;
+}
+.btn-premium-primary:hover {
+  background: linear-gradient(135deg, #B5D7EA 0%, #97BFD9 100%); transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(151, 191, 217, 0.3); color: #080B12;
+}
+
+.btn-premium-secondary {
+  background: transparent; color: #ffffff; font-weight: 600; padding: 14px 32px;
+  border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); text-decoration: none;
+  transition: all 0.3s ease; display: inline-flex; align-items: center; font-size: 1rem;
+}
+.btn-premium-secondary:hover { background: rgba(255, 255, 255, 0.05); border-color: #ffffff; color: #ffffff; transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 991px) {
+  .about-hero { padding: 130px 15px 90px 15px; }
+  .about-hero__title { font-size: 2.8rem; }
+  .about-content-container { margin-top: -30px; }
+}
+@media (max-width: 768px) {
+  .about-hero__title { font-size: 2.2rem; }
+  .story-card { padding: 30px 20px; }
+  .section-heading { font-size: 1.5rem; }
+  .section-text-lead { font-size: 1.1rem; }
+}

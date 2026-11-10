@@ -1,0 +1,321 @@
+/* =========================================
+   GLOBAL PAGE BACKGROUND
+   ========================================= */
+.event-details-page {
+  background-color: #080B12; /* DEEP BLACK BASE */
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+/* =========================================
+   HERO SECTION (Gradient Background)
+   ========================================= */
+.event-hero-gradient {
+  position: relative;
+  min-height: 380px;
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  display: flex;
+  align-items: flex-end;
+  padding-top: 80px;
+}
+.relative-z { position: relative; z-index: 2; }
+
+.hero-back-link {
+  font-weight: 600;
+  color: #0B1220;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.hero-back-link:hover { opacity: 1; color: #0B1220; }
+
+.hero-badge {
+  display: inline-block;
+  background: #0B1220;
+  color: #97BFD9;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-title-black {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #0B1220; /* Black Heading */
+  line-height: 1.1;
+  margin-bottom: 15px;
+  letter-spacing: -0.03em;
+}
+
+.hero-meta-black {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0B1220;
+  opacity: 0.85;
+}
+
+.hero-thumbnail {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(11, 18, 32, 0.3);
+  border: 3px solid rgba(255,255,255,0.5);
+  transform: translateY(30px);
+}
+
+/* =========================================
+   TABS
+   ========================================= */
+.event-tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 15px;
+  overflow-x: auto;
+}
+
+.event-tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #A7B0C0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.event-tab:hover { color: #ffffff; background: rgba(255,255,255,0.05); }
+
+.event-tab.active {
+  color: #0B1220;
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+}
+
+/* =========================================
+   PREMIUM BOX (Heavy Shadow & Horizontal Lines Animation)
+   ========================================= */
+.animated-gradient-box {
+  position: relative;
+  border-radius: 16px;
+  background: #0D111B; /* Inner deep black */
+  
+  /* MOTI (HEAVY) GRADIENT SHADOW */
+  box-shadow: 0 20px 50px -10px rgba(151, 191, 217, 0.4), 
+              0 0 30px rgba(151, 191, 217, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  z-index: 1;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.animated-gradient-box:hover {
+  box-shadow: 0 25px 60px -10px rgba(151, 191, 217, 0.6), 
+              0 0 40px rgba(151, 191, 217, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 1. TOP BORDER ANIMATION (Left to Right) */
+.animated-gradient-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%; /* Shuru mein chhupa hua */
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to right, transparent, #97BFD9, #ffffff, #97BFD9, transparent);
+  animation: scan-top 3s linear infinite;
+  z-index: 10;
+}
+
+/* 2. BOTTOM BORDER ANIMATION (Right to Left) */
+.animated-gradient-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -40%;
+  height: 3px;
+  width: 40%;
+  background: linear-gradient(to left, transparent, #ffffff, #97BFD9, #ffffff, transparent);
+  animation: scan-bottom 3s linear infinite;
+  animation-delay: 1.5s; /* Dono lines alag alag chalein */
+  z-index: 10;
+}
+
+/* TOP LINE ANIMATION (Left to Right) */
+@keyframes scan-top {
+  0% { left: -40%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* BOTTOM LINE ANIMATION (Right to Left) */
+@keyframes scan-bottom {
+  0% { right: -40%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { right: 100%; opacity: 0; }
+}
+
+/* Inner Content */
+.content-card-inner,
+.booking-card-inner,
+.calendar-card-inner {
+  background: transparent;
+  border-radius: 15px;
+  padding: 35px;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+.calendar-card-inner { padding: 25px; }
+
+/* =========================================
+   CONTENT TYPOGRAPHY
+   ========================================= */
+.section-title { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 20px; }
+.section-subtitle { font-size: 1.2rem; font-weight: 700; color: #ffffff; margin-bottom: 15px; }
+.desc-text { font-size: 1.05rem; line-height: 1.8; color: #A7B0C0; }
+
+/* Info Boxes */
+.info-box {
+  background: #151D2B;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border-left: 4px solid #97BFD9;
+}
+.info-box strong { display: block; font-size: 0.8rem; text-transform: uppercase; color: #A7B0C0; margin-bottom: 5px; }
+.info-box span { font-size: 1rem; font-weight: 600; color: #ffffff; }
+
+/* Exhibitors */
+.exhibitor-card {
+  display: flex; gap: 15px; padding: 20px;
+  background: #151D2B; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.exhibitor-icon {
+  font-size: 2rem; background: #111827; width: 50px; height: 50px;
+  display: flex; align-items: center; justify-content: center; border-radius: 10px;
+}
+
+/* Floor Plan */
+.floorplan-wrapper { background: #151D2B; border-radius: 12px; padding: 20px; }
+
+/* =========================================
+   SCHEDULE DESIGN
+   ========================================= */
+.schedule-list { display: flex; flex-direction: column; gap: 20px; }
+.pro-schedule-card {
+  background: #151D2B; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.09);
+  padding: 25px; transition: transform 0.2s, border-color 0.2s;
+}
+.pro-schedule-card:hover { border-color: rgba(151, 191, 217, 0.4); transform: translateY(-2px); }
+.pro-schedule-header {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px;
+}
+.pro-schedule-title { font-size: 1.3rem; font-weight: 700; color: #97BFD9; }
+.pro-btn-bookmark {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff; padding: 6px 14px; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.pro-btn-bookmark:hover { background: rgba(255,255,255,0.1); }
+
+.pro-schedule-body { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+@media(min-width: 768px) { .pro-schedule-body { grid-template-columns: repeat(4, 1fr); } }
+.pro-detail-item { display: flex; flex-direction: column; gap: 4px; }
+.pro-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #6B7280; font-weight: 600; }
+.pro-value { font-size: 1rem; color: #ffffff; font-weight: 500; }
+.pro-schedule-desc p { color: #A7B0C0; font-size: 0.95rem; line-height: 1.6; margin-top: 5px; }
+
+/* =========================================
+   RIGHT SIDEBAR
+   ========================================= */
+.sidebar-sticky { position: sticky; top: 100px; }
+.sidebar-card-title { font-size: 1.4rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; }
+.sidebar-card-subtitle { color: #A7B0C0; font-size: 0.9rem; margin-bottom: 25px; }
+
+.btn-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  color: #0B1220; border: none; font-weight: 800; font-size: 1rem;
+  border-radius: 8px; cursor: pointer; transition: all 0.3s;
+}
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #97bfd9 0%, #ffffff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(151, 191, 217, 0.2);
+}
+
+/* CALENDAR */
+.calendar-title { font-size: 1.1rem; font-weight: 800; color: #ffffff; margin-bottom: 20px; text-align: center; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.calendar-day-header { font-size: 0.75rem; font-weight: 700; color: #6B7280; text-align: center; padding-bottom: 10px; }
+.calendar-day {
+  position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 500; color: #A7B0C0; border-radius: 8px; cursor: pointer;
+}
+.calendar-day:hover { background: #151D2B; }
+.calendar-day.has-event { background: #97BFD9; color: #0B1220; font-weight: 800; box-shadow: 0 4px 10px rgba(151, 191, 217, 0.3); }
+.event-dot { position: absolute; bottom: 4px; width: 4px; height: 4px; background: #0B1220; border-radius: 50%; }
+
+/* ✅ Exhibitor Accordion Styles */
+.exhibitor-accordion-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.exhibitor-accordion-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(151, 191, 217, 0.3);
+}
+
+.exhibitor-accordion-card.active {
+  background: rgba(21, 29, 43, 0.8);
+  border-color: #97BFD9;
+  box-shadow: 0 4px 15px rgba(151, 191, 217, 0.1);
+}
+
+.exhibitor-accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.exhibitor-accordion-header .exhibitor-icon {
+  font-size: 24px;
+  background: rgba(151, 191, 217, 0.15);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.exhibitor-accordion-body {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

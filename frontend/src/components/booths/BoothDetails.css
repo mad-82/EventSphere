@@ -1,0 +1,46 @@
+/* BoothDetails.css */
+
+/* Fade-in animation for the backdrop */
+.modal.fade.show {
+  animation: modalFadeIn 0.2s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styling the modal box */
+.modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+}
+
+/* Dark header for the modal */
+.modal-header {
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+/* Remove default footer border */
+.modal-footer {
+  border-top: none;
+  padding: 1rem 1.5rem;
+}
+
+/* Price styling in modal */
+.modal-body h4.text-primary {
+  color: #0B1220 !important;
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+/* Facility badges */
+.modal-body .badge.bg-light {
+  background-color: #F3F4F6 !important;
+  color: #374151 !important;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+}

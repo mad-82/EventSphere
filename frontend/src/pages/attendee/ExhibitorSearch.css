@@ -1,0 +1,35 @@
+.exsearch-page { padding: 32px; max-width: 1200px; margin: 0 auto; font-family: "Inter", sans-serif; color: #0f172a; }
+.exsearch-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; gap: 16px; flex-wrap: wrap; }
+.exsearch-header h1 { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+.exsearch-header p { margin: 6px 0 0; color: #64748b; font-size: 15px; }
+.exsearch-count { font-size: 14px; color: #64748b; background: #fff; padding: 8px 16px; border-radius: 99px; border: 1px solid #e2e8f0; }
+.exsearch-count strong { color: #0f172a; font-weight: 700; }
+
+.exsearch-toolbar { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.exsearch-input-wrap { flex: 1; min-width: 240px; display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0 16px; }
+.exsearch-input-wrap svg { color: #94a3b8; }
+.exsearch-input-wrap input { flex: 1; border: none; padding: 12px 0; font-size: 14px; outline: none; background: transparent; }
+.exsearch-filter { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0 16px; color: #64748b; }
+.exsearch-filter select { border: none; background: transparent; padding: 12px 0; font-size: 14px; outline: none; font-weight: 600; color: #0f172a; cursor: pointer; }
+
+.exsearch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+.exsearch-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; cursor: pointer; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.exsearch-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(15,23,42,0.08); }
+.exsearch-card__banner { height: 70px; background: linear-gradient(135deg, #1e293b, #334155); }
+.exsearch-card__content { padding: 0 20px 20px; display: flex; flex-direction: column; position: relative; }
+.exsearch-card__avatar { width: 60px; height: 60px; border-radius: 14px; background: #fff; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; color: #1e293b; margin-top: -30px; margin-bottom: 12px; overflow: hidden; }
+.exsearch-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.exsearch-card__title { margin: 0 0 8px; font-size: 17px; font-weight: 800; }
+.exsearch-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.exsearch-tag { background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+.exsearch-tag--loc { display: flex; align-items: center; gap: 4px; }
+.exsearch-card__desc { margin: 0 0 16px; font-size: 13.5px; color: #64748b; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+.exsearch-card__actions { margin-top: auto; }
+.exsearch-btn { width: 100%; padding: 10px; border-radius: 8px; background: #1e293b; color: #fff; border: none; font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.2s; }
+.exsearch-btn:hover { background: #0f172a; }
+
+.exsearch-empty, .exsearch-loading, .exsearch-error { text-align: center; padding: 80px 20px; background: #fff; border: 1px dashed #e2e8f0; border-radius: 16px; color: #64748b; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.exsearch-empty h3 { margin: 0; font-size: 18px; color: #0f172a; }
+.att-spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

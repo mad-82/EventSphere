@@ -1,0 +1,98 @@
+.session-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.session-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+  border-color: #97BFD9;
+}
+
+.session-card__time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  padding-right: 20px;
+  border-right: 1px solid #e2e8f0;
+  font-weight: 600;
+}
+
+.session-card__start { color: #0B1220; font-size: 1.1rem; }
+.session-card__end { color: #64748b; font-size: 0.85rem; }
+
+.session-card__content { flex: 1; }
+
+.session-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.session-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0B1220;
+  margin: 0;
+}
+
+.session-card__meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.session-card__desc {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.session-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-action {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.btn-edit { background: #f1f5f9; color: #0B1220; }
+.btn-edit:hover { background: #e2e8f0; }
+
+.btn-delete { background: #fee2e2; color: #ef4444; }
+.btn-delete:hover { background: #fecaca; }
+
+/* Badges */
+.badge-type {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.badge-type--keynote { background: #e0f2fe; color: #0284c7; }
+.badge-type--workshop { background: #fef3c7; color: #d97706; }
+.badge-type--panel { background: #f3f4f6; color: #4b5563; }

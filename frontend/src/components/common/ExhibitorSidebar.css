@@ -1,0 +1,126 @@
+/* ============================================================
+   EXHIBITOR SIDEBAR — BLACK WITH GRADIENT HOVER
+   ============================================================ */
+
+.exb-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  /* Sidebar black */
+  background: #0f1a16; 
+  color: #a0aec0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2d3748;
+  transition: width 0.2s ease;
+  z-index: 100;
+  position: relative;
+}
+.exb-sidebar--collapsed { width: 80px; }
+
+/* Brand */
+.exb-sidebar__brand {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.exb-sidebar__brand-mark {
+  width: 40px;
+  height: 40px;
+  /* Brand mark uses gradient */
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  color: #0f1a16; /* text black */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.exb-sidebar__brand-name { display: block; font-size: 16px; font-weight: 700; color: #ffffff; }
+.exb-sidebar__brand-tag { display: block; font-size: 11px; text-transform: uppercase; color: #a0aec0; margin-top: 2px; }
+
+/* Nav */
+.exb-sidebar__nav { padding: 0 16px; display: flex; flex-direction: column; gap: 24px; flex: 1; overflow-y: auto; }
+.exb-sidebar__section-title { display: block; font-size: 11px; font-weight: 700; color: #718096; margin-bottom: 8px; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Link */
+.exb-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-bottom: 2px;
+}
+
+/* HOVER = GRADIENT */
+.exb-sidebar__link:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  color: #0f1a16; /* text black on hover */
+}
+.exb-sidebar__link:hover .exb-sidebar__icon {
+  color: #0f1a16;
+}
+
+/* Active = Also Gradient (make it stand out) */
+.exb-sidebar__link--active {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  color: #0f1a16;
+  font-weight: 700;
+}
+.exb-sidebar__link--active .exb-sidebar__icon {
+  color: #0f1a16;
+}
+
+.exb-sidebar__icon { display: inline-flex; align-items: center; justify-content: center; color: #a0aec0; }
+
+/* Badge */
+.exb-sidebar__badge {
+  margin-left: auto;
+  background: #e53e3e;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.exb-sidebar__badge--dot { width: 8px; height: 8px; padding: 0; border-radius: 50%; }
+
+/* Footer / User */
+.exb-sidebar__footer { padding: 20px 16px; border-top: 1px solid #2d3748; }
+.exb-sidebar__user { display: flex; gap: 12px; align-items: center; }
+.exb-sidebar__avatar { 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 50%; 
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%); 
+  color: #0f1a16; 
+  display: flex; align-items: center; justify-content: center; font-weight: 700; 
+}
+.exb-sidebar__user-meta { display: flex; flex-direction: column; overflow: hidden; }
+.exb-sidebar__user-name { font-size: 13px; font-weight: 600; color: #ffffff; }
+.exb-sidebar__user-email { font-size: 12px; color: #a0aec0; text-overflow: ellipsis; overflow: hidden; }
+.exb-sidebar__logout { 
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px; margin-top: 12px; 
+  background: transparent; border: none; color: #e53e3e; font-weight: 600; cursor: pointer; 
+}
+.exb-sidebar__logout:hover { 
+  background: #2d3748; 
+  border-radius: 8px; 
+}
+
+/* Collapse button */
+.exb-sidebar__collapse-btn { 
+  position: absolute; right: -14px; top: 40px; width: 28px; height: 28px; 
+  background: #0f1a16; border: 1px solid #4a5568; border-radius: 50%; 
+  display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; 
+}
+.exb-sidebar__collapse-btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  color: #0f1a16;
+}

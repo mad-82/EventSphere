@@ -1,0 +1,16 @@
+.exb-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.exb-status--md { padding: 4px 10px; font-size: 12px; }
+.exb-status--sm { padding: 2px 8px;  font-size: 11px; }
+
+.exb-status--pending  { background: #fdf6e3; color: #b7791f; border-color: #f2e3bd; }
+.exb-status--approved { background: #e7f5ee; color: #0e8a5f; border-color: #c6e8d6; }
+.exb-status--rejected { background: #fdecec; color: #b03a3a; border-color: #f3cccc; }
+.exb-status--draft    { background: #f1f4f2; color: #5a6663; border-color: #e6eae8; }

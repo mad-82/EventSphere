@@ -1,0 +1,255 @@
+Folder PATH listing
+Volume serial number is 000000DE 002D:131A
+C:\USERS\WAJIZ.PK\DESKTOP\EVENTSPHERE\FRONTEND\SRC
+|   App.css
+|   App.jsx
+|   index.css
+|   main.jsx
+|   
++---assets
+|   |   hero.png
+|   |   react.svg
+|   |   vite.svg
+|   |   
+|   +---icons
+|   +---images
+|   |       Automotive.jpg
+|   |       Expo tech world.jpg
+|   |       food-festival-advertising-square.jpg
+|   |       
+|   \---styles
+|           global.css
+|           responsive.css
+|           variables.css
+|           
++---components
+|   +---auth
+|   |       AuthField.jsx
+|   |       PasswordStrength.jsx
+|   |       ProtectedRoute.jsx
+|   |       PublicOnlyRoute.jsx
+|   |       RoleBasedRoute.jsx
+|   |       RoleSelector.jsx
+|   |       
+|   +---booths
+|   |       BoothCard.css
+|   |       BoothCard.jsx
+|   |       BoothDetails.css
+|   |       BoothDetails.jsx
+|   |       FloorPlan.css
+|   |       FloorPlan.jsx
+|   |       
+|   +---common
+|   |       ExhibitorNavbar.css
+|   |       ExhibitorNavbar.jsx
+|   |       ExhibitorSidebar.css
+|   |       ExhibitorSidebar.jsx
+|   |       Footer.css
+|   |       Footer.jsx
+|   |       Loader.css
+|   |       Loader.jsx
+|   |       Modal.css
+|   |       Modal.jsx
+|   |       Navbar.css
+|   |       Navbar.jsx
+|   |       NotificationBell.css
+|   |       NotificationBell.jsx
+|   |       OrganizerNavbar.css
+|   |       OrganizerNavbar.jsx
+|   |       Pagination.css
+|   |       Pagination.jsx
+|   |       SearchBar.css
+|   |       SearchBar.jsx
+|   |       Sidebar.css
+|   |       Sidebar.jsx
+|   |       
+|   +---events
+|   |       EventCard.css
+|   |       EventCard.jsx
+|   |       EventDetails.css
+|   |       EventDetails.jsx
+|   |       EventForm.css
+|   |       EventForm.jsx
+|   |       
+|   +---exhibitors
+|   |       ApplicationStatus.css
+|   |       ApplicationStatus.jsx
+|   |       BoothMap.css
+|   |       BoothMap.jsx
+|   |       DocumentUpload.css
+|   |       DocumentUpload.jsx
+|   |       ExhibitorCard.css
+|   |       ExhibitorCard.jsx
+|   |       ExhibitorDetails.css
+|   |       ExhibitorDetails.jsx
+|   |       ExhibitorForm.css
+|   |       ExhibitorForm.jsx
+|   |       NotificationItem.css
+|   |       NotificationItem.jsx
+|   |       ProductServiceForm.css
+|   |       ProductServiceForm.jsx
+|   |       StaffForm.css
+|   |       StaffForm.jsx
+|   |       
+|   +---forms
+|   |       FileUpload.css
+|   |       FileUpload.jsx
+|   |       InputField.css
+|   |       InputField.jsx
+|   |       SelectField.css
+|   |       SelectField.jsx
+|   |       
+|   +---schedule
+|   |       ScheduleList.css
+|   |       ScheduleList.jsx
+|   |       SessionCard.css
+|   |       SessionCard.jsx
+|   |       
+|   \---ui
+|           Modal.css
+|           Modal.jsx
+|           Toast.css
+|           Toast.jsx
+|           
++---context
+|       AuthContext.jsx
+|       ExhibitorDataContext.jsx
+|       NotificationContext.jsx
+|       
++---data
+|       exhibitorSeed.js
+|       
++---hooks
+|       useAuth.js
+|       useNotifications.js
+|       
++---layouts
+|       AttendeeLayout.css
+|       AttendeeLayout.jsx
+|       ExhibitorLayout.css
+|       ExhibitorLayout.jsx
+|       OrganizerLayout.css
+|       OrganizerLayout.jsx
+|       PublicLayout.css
+|       PublicLayout.jsx
+|       
++---pages
+|   +---attendee
+|   |       AttendeeDashboard.css
+|   |       AttendeeDashboard.jsx
+|   |       AttendeeSchedule.css
+|   |       AttendeeSchedule.jsx
+|   |       BookmarkedSessions.css
+|   |       BookmarkedSessions.jsx
+|   |       EventRegistration.css
+|   |       EventRegistration.jsx
+|   |       ExhibitorDetails.css
+|   |       ExhibitorDetails.jsx
+|   |       ExhibitorSearch.css
+|   |       ExhibitorSearch.jsx
+|   |       
+|   +---auth
+|   |       ForgotPassword.css
+|   |       ForgotPassword.jsx
+|   |       Login.css
+|   |       Login.jsx
+|   |       Register.css
+|   |       Register.jsx
+|   |       ResetPassword.jsx
+|   |       
+|   +---exhibitor
+|   |       BoothSelection.css
+|   |       BoothSelection.jsx
+|   |       BrowseExpos.css
+|   |       BrowseExpos.jsx
+|   |       ExhibitorCommunication.css
+|   |       ExhibitorCommunication.jsx
+|   |       ExhibitorDashboard.css
+|   |       ExhibitorDashboard.jsx
+|   |       ExhibitorDirectory.css
+|   |       ExhibitorDirectory.jsx
+|   |       ExhibitorNotifications.css
+|   |       ExhibitorNotifications.jsx
+|   |       ExhibitorProfile.css
+|   |       ExhibitorProfile.jsx
+|   |       ExhibitorSettings.css
+|   |       ExhibitorSettings.jsx
+|   |       ExpoApplication.css
+|   |       ExpoApplication.jsx
+|   |       MyApplications.css
+|   |       MyApplications.jsx
+|   |       MyBooth.css
+|   |       MyBooth.jsx
+|   |       ProductsServices.css
+|   |       ProductsServices.jsx
+|   |       StaffManagement.css
+|   |       StaffManagement.jsx
+|   |       
+|   +---organizer
+|   |       AnalyticsReports.css
+|   |       AnalyticsReports.jsx
+|   |       AttendeeManagement.css
+|   |       AttendeeManagement.jsx
+|   |       BoothManagement.css
+|   |       BoothManagement.jsx
+|   |       Communication.css
+|   |       Communication.jsx
+|   |       ExhibitorApplications.css
+|   |       ExhibitorApplications.jsx
+|   |       ExhibitorManagement.css
+|   |       ExhibitorManagement.jsx
+|   |       ExpoManagement.css
+|   |       ExpoManagement.jsx
+|   |       FloorPlanManagement.css
+|   |       FloorPlanManagement.jsx
+|   |       OrganizerDashboard.css
+|   |       OrganizerDashboard.jsx
+|   |       ProfileSettings.css
+|   |       ProfileSettings.jsx
+|   |       ScheduleManagement.css
+|   |       ScheduleManagement.jsx
+|   |       
+|   +---public
+|   |       BoothSelection.css
+|   |       BoothSelection.jsx
+|   |       EventDetails.css
+|   |       EventDetails.jsx
+|   |       Events.css
+|   |       Events.jsx
+|   |       Home.css
+|   |       Home.jsx
+|   |       TicketBooking.css
+|   |       TicketBooking.jsx
+|   |       
+|   \---shared
+|           FeedbackSupport.css
+|           FeedbackSupport.jsx
+|           Notifications.css
+|           Notifications.jsx
+|           
++---routes
+|       AppRoutes.jsx
+|       
++---services
+|       analyticsService.js
+|       api.js
+|       applicationService.js
+|       authService.js
+|       bookmarkService.js
+|       boothService.js
+|       eventService.js
+|       exhibitorService.js
+|       expoService.js
+|       feedbackService.js
+|       messageService.js
+|       notificationService.js
+|       productService.js
+|       registrationService.js
+|       scheduleService.js
+|       staffService.js
+|       
+\---utils
+        constants.js
+        formatDate.js
+        validators.js
+        

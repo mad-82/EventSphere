@@ -1,0 +1,24 @@
+.att-navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; background: #0f172a; color: #fff; border-bottom: 1px solid #1e293b; }
+.att-navbar__left, .att-navbar__right { display: flex; align-items: center; gap: 20px; }
+.att-navbar__hamburger { background: transparent; border: none; color: #a0aec0; cursor: pointer; padding: 8px; border-radius: 6px; display: flex; }
+.att-navbar__hamburger:hover { background: #1e293b; color: #fff; }
+.att-navbar__title { margin: 0; font-size: 20px; font-weight: 700; color: #fff; }
+.att-navbar__eyebrow { display: block; font-size: 11px; text-transform: uppercase; color: #94a3b8; }
+
+.att-navbar__icon-btn { background: transparent; border: none; color: #a0aec0; cursor: pointer; padding: 8px; border-radius: 8px; position: relative; transition: all 0.2s; display: flex; }
+.att-navbar__icon-btn:hover { background: #1e293b; color: #fff; }
+
+.att-navbar__profile { position: relative; }
+.att-navbar__profile-btn { display: flex; align-items: center; gap: 10px; background: transparent; border: none; color: #fff; cursor: pointer; padding: 8px 12px; border-radius: 8px; }
+.att-navbar__profile-btn:hover { background: #1e293b; }
+.att-navbar__avatar { width: 32px; height: 32px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.att-navbar__profile-meta { display: flex; flex-direction: column; text-align: left; }
+.att-navbar__profile-name { font-size: 13px; font-weight: 600; }
+.att-navbar__profile-role { font-size: 11px; color: #94a3b8; }
+
+.att-navbar__menu { position: absolute; top: 100%; right: 0; margin-top: 8px; width: 180px; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); overflow: hidden; z-index: 100; }
+.att-navbar__menu-item { display: block; padding: 12px 16px; font-size: 13.5px; color: #0f172a; text-decoration: none; background: none; border: none; width: 100%; text-align: left; cursor: pointer; font-family: inherit; }
+.att-navbar__menu-item:hover { background: #f1f5f9; }
+.att-navbar__menu-item--danger { color: #b03a3a; }
+.att-navbar__menu-item--danger:hover { background: #fee2e2; }
+.att-navbar__menu-divider { height: 1px; background: #e2e8f0; margin: 4px 0; }

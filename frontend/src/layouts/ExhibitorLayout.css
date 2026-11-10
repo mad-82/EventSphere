@@ -1,0 +1,33 @@
+/* ============================================================
+   EXHIBITOR LAYOUT BASE
+   ============================================================ */
+
+.exb-layout {
+  display: flex;
+  min-height: 100vh;
+  /* PANEL BASE = GRADIENT */
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.exb-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Content area background (thoda white overlay taake cards clear dikhein) */
+  background: rgba(255, 255, 255, 0.6); 
+}
+
+.exb-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0; /* Dashboard component khud padding de raha hai */
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .exb-layout {
+    position: relative;
+  }
+}

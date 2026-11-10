@@ -1,0 +1,455 @@
+/* ============================================================
+   EventSphere Navbar — Premium Glassy Blue & Vertical Mobile
+   ============================================================ */
+
+.es-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: linear-gradient(to bottom, transparent, #97BFD9, transparent);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(125, 185, 245, 0.5);
+  transition: all 400ms ease;
+}
+
+.es-nav--open {
+  z-index: 1000;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.es-nav--scrolled {
+  background: linear-gradient(to bottom, transparent,#97BFD9, transparent);
+  box-shadow: 0 10px 30px -10px rgba(170, 230, 252, 0.827);
+}
+
+.es-nav__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* ============ Brand ============ */
+.es-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.es-nav__brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  border: 1px solid rgba(186, 224, 245, 0.9);
+  box-shadow: 0 4px 10px rgba(19, 23, 38, 0.05);
+}
+
+.es-nav__brand-mark span {
+  font-family: var(--es-serif, Georgia, serif);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #000002;
+}
+
+.es-nav__brand-text {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--es-serif, Georgia, serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: hsl(225, 15%, 95%);
+  line-height: 1.1;
+}
+
+.es-nav__brand-sub {
+  font-family: var(--es-sans, sans-serif);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+/* ============ Desktop Links ============ */
+.es-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(93, 87, 87, 0.6);
+}
+
+.es-nav__link {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f172a;
+  text-decoration: none;
+  transition: all 300ms ease;
+}
+
+.es-nav__link:hover,
+.es-nav__link.is-active {
+  background: linear-gradient(135deg, #ffffff 0%, #97bfd9 100%);
+  box-shadow: 0 4px 12px rgba(19, 23, 38, 0.06);
+  color: #000000;
+}
+
+/* ============ Auth Buttons ============ */
+.es-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.es-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  font-family: var(--es-sans, sans-serif);
+  font-size: 0.90rem;
+  font-weight: 7800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 250ms ease, box-shadow 250ms ease, filter 250ms ease;
+}
+
+.es-btn--ghost {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(186, 224, 245, 0.8);
+  box-shadow: 0 2px 6px rgba(19, 23, 38, 0.04);
+}
+
+.es-btn--ghost:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(19, 23, 38, 0.08);
+}
+
+.es-btn--solid {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #dfe1e3 25%,
+    #5381b6 50%,
+     #97bfd9 100%
+  );
+  border: 1px solid rgba(147, 197, 253, 1);
+  box-shadow: 
+    0 4px 12px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.es-btn--solid:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 
+    0 8px 20px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.es-btn__arrow {
+  transition: transform 300ms ease;
+}
+
+.es-btn--solid:hover .es-btn__arrow {
+  transform: translateX(4px);
+}
+
+/* ============ Burger Button ============ */
+.es-nav__burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(186, 222, 242, 0.8);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1005;
+  transition: all 300ms ease;
+}
+
+.es-nav__burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.es-nav__burger[aria-expanded="true"] {
+  background: #f0f9ff;
+}
+.es-nav__burger[aria-expanded="true"] span:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+.es-nav__burger[aria-expanded="true"] span:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* =========================================
+   Profile Dropdown Styles
+   ========================================= */
+.es-nav__profile-wrap {
+  position: relative;
+}
+
+.es-nav__profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px 4px 4px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.es-nav__profile-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.es-nav__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #97BFD9;
+  color: #0B1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.es-nav__profile-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0B1220;
+}
+
+.es-nav__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 200px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.es-nav__dropdown-header {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.es-nav__dropdown-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0B1220;
+}
+
+.es-nav__dropdown-role {
+  font-size: 11px;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+.es-nav__dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.es-nav__dropdown-item:hover {
+  background: #f3f4f6;
+  color: #0B1220;
+}
+
+.es-nav__dropdown-item--danger {
+  color: #dc2626;
+}
+
+.es-nav__dropdown-item--danger:hover {
+  background: #fef2f2;
+}
+
+.es-nav__dropdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 6px 0;
+}
+
+/* ============================================================
+   📱 Mobile Vertical Menu (FIXED RIGHT SIDE BANNER)
+   ============================================================ */
+.es-nav__mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 350px;
+  height: 100vh; /* Height force ki hai */
+  
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(224, 242, 254, 0.98) 60%,
+    rgba(144, 187, 238, 0.95) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  
+  /* Right se slide animation */
+  transform: translateX(100%);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  z-index: 9999; /* Sabse upar */
+  
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.es-nav__mobile.is-open {
+  transform: translateX(0);
+}
+
+/* Close button inside mobile menu */
+.es-nav__mobile-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #0f172a;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.es-nav__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.es-nav__mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--es-serif, Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  transition: background 300ms ease, color 300ms ease;
+}
+
+.es-nav__mobile-link:hover,
+.es-nav__mobile-link:active {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.es-nav__mobile-index {
+  font-family: var(--es-sans, sans-serif);
+  font-size: 0.7rem;
+  color: #3b82f6;
+  letter-spacing: 0.1em;
+}
+
+.es-nav__mobile-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.es-btn--full {
+  width: 100%;
+  padding: 1.2rem;
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+@media (max-width: 1024px) {
+  .es-nav__links {
+    display: none;
+  }
+  .es-nav__actions .es-btn {
+    display: none;
+  }
+  .es-nav__burger {
+    display: flex;
+  }
+}
+
+@media (min-width: 1025px) {
+  .es-nav__mobile {
+    display: none !important;
+  }
+}
